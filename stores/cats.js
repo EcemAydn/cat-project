@@ -4,19 +4,19 @@ import { useNuxtApp } from '#app';
 export const useCatsStore = defineStore('cats', () => {
   const currentCat = ref(null);
   const loading = ref(false);
+  const error = ref(null);
 
   async function fetchRandomCat() {
     const { $api } = useNuxtApp()
-    loading.value = true
+    loading.value = true;
+    error.value = null;
+
     try {
-      const { data } = await $api.cats.getRandomCat();
-        if (data.value && Array.isArray(data.value) && data.value.length > 0) {
-          currentCat.value = data.value[0];
-        } else {
-          console.log('error')
-        }
-    } catch (error) {
-      console.error('error', error);
+      const data = await $api.cats.getRandomCat();
+      currentCat.value = data;
+    } catch (err) {
+      error.value = err.message;
+      console.error(err);
     } finally {
       loading.value = false;
     }
@@ -25,7 +25,7 @@ export const useCatsStore = defineStore('cats', () => {
   return {
     currentCat,
     loading,
-
+    error,
     fetchRandomCat
   }
 })
