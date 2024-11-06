@@ -1,0 +1,33 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.cat-image-container {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btn-primary {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
