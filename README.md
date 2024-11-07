@@ -1,75 +1,40 @@
-# Nuxt Minimal Starter
+# Kedi Galerisi
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Proje Özellikleri
 
-## Setup
+- Nuxt 3 ile geliştirildi.
+- Kullanıcı girişi ve çıkışı.
+- The Cat API kullanılarak rastgele kedi görsellerinin gösterimi.
+- Görsel geçişlerinde rastgele efektler.
 
-Make sure to install dependencies:
+## Kurulum
 
 ```bash
-# npm
+# Bağımlılıkları yükleyin
 npm install
 
-# pnpm
-pnpm install
+# .env dosyasını oluşturun ve aşağıdaki değişkenleri ekleyin (.env dosyası proje içerisinde bulunuyor.)
+CAT_API_KEY=your_api_key_here
+CAT_API_URL=https://api.thecatapi.com/v1
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Projeyi başlatın
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Kullanıcı Girişi
 
-Build the application for production:
+Demo hesap bilgileri:
+- Kullanıcı adı: `admin`
+- Şifre: `password`
 
-```bash
-# npm
-npm run build
+## Kullanılan Paketler
 
-# pnpm
-pnpm build
+- @pinia/nuxt
+- bootstrap
+- bootstrap-icons
+- vue-progressive-image
+- sass
 
-# yarn
-yarn build
+## Proje Yapısı
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Repository pattern kullanılarak API istekler yönetildi. Nuxt proxy özelliği ile API key güvenliği sağlandı. State management için Pinia kullanıldı.
