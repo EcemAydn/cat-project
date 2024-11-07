@@ -9,6 +9,7 @@ const authStore = useAuthStore();
 
 definePageMeta({
   title: "Home",
+  middleware: ["auth"]
 });
 
 onMounted(() => {

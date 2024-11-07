@@ -15,6 +15,11 @@ const errors = ref({
 const loading = ref(false)
 const formTouched = ref(false)
 
+definePageMeta({
+  title: "Login",
+  middleware: ["auth"]
+});
+
 watch(() => form.value.username, () => {
   if (formTouched.value) {
     errors.value.username = ''
